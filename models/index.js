@@ -1,9 +1,11 @@
 const db = require("./db");
 const Sequelize = require('sequelize');
+
+var models = require("./models.js");
 var Hotel = require("./models.js").Hotel;
-var Place = require("./models.js").Place;
-var Activity = require("./models.js").Activity;
-var Restaurant = require("./models.js").Restaurant;
+var Place = models.Place;
+var Activity = models.Activity;
+var Restaurant = models.Restaurant;
 // Require your models
 // Make associations etc
 

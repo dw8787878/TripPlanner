@@ -1,6 +1,6 @@
 const db = require("./db");
-
-db.define('Place', {
+const Sequelize = require('sequelize');
+var Place = db.define('Place', {
   address: {
     type: Sequelize.STRING,
     allowNull: false
@@ -18,7 +18,7 @@ db.define('Place', {
     type: Sequelize.ARRAY(Sequelize.FLOAT)
   }
 });
-db.define('Hotel', {
+var Hotel = db.define('Hotel', {
   name: {
     type: Sequelize.STRING
   },
@@ -29,7 +29,7 @@ db.define('Hotel', {
     type: Sequelize.STRING
   }
 });
-db.define('Activty', {
+var Activity = db.define('Activty', {
   name: {
     type: Sequelize.STRING
   },
@@ -37,7 +37,7 @@ db.define('Activty', {
     type: Sequelize.STRING
   }
 });
-db.define('Restaurant', {
+var Restaurant = db.define('Restaurant', {
   name: {
     type: Sequelize.STRING
   },
@@ -49,4 +49,10 @@ db.define('Restaurant', {
   }
 });
 
-module.exports = db;
+module.exports = {
+  db: db,
+  Restaurant: Restaurant,
+  Hotel: Hotel,
+  Activity: Activity,
+  Place: Place
+}
