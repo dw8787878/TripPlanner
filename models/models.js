@@ -1,5 +1,7 @@
 const db = require("./db");
 const Sequelize = require('sequelize');
+
+
 var Place = db.define('Place', {
   address: {
     type: Sequelize.STRING,
@@ -18,6 +20,8 @@ var Place = db.define('Place', {
     type: Sequelize.ARRAY(Sequelize.FLOAT)
   }
 });
+
+
 var Hotel = db.define('Hotel', {
   name: {
     type: Sequelize.STRING
